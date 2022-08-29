@@ -3,7 +3,7 @@ name: excercis-github-actions
 on: [push]
 jobs:
   hello-word:
-
+  
     runs-on: ubuntu-latest
 
     steps:
