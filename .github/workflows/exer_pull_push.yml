@@ -1,15 +1,21 @@
 name:  push or pull
 on: workflow_dispatch
 env: 
-  NAME: push
-
+   #PUSH: c'est un push
+   #PULL: c'est un pull 
+   NAME: pull
+  
 jobs:
-  the_anwser:
+  the_anwser_pull:
     runs-on: ubuntu-latest
     steps:
       - name: "c'est push"
-        if: ${{env.NAME == 'pull'}}
-        run: echo "tu es un pull !"
-      - name: "hello pull"
-        if: ${{env.NAME == 'push'}}
-        run: echo "Salut $NAME !"  
+        if: ${{env. == 'pull'}}
+        run: echo "c'est un pull !"
+ 
+  the_anwser_push:
+      runs-on: ubuntu-latest 
+      steps:     
+        - name: "hello pull"
+          if: ${{env.NAME == 'push'}}
+          run: echo "c'est un $NAME !"  
