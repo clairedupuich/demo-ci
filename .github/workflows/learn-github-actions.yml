@@ -1,0 +1,19 @@
+#
+name: lear-github-actions
+
+# trigger. ici lors des push
+on: [push]
+
+jobs:
+  # premier jobs
+  check-bats-version:
+
+    runs-on: ubuntu-latest
+    # declaration de la  liste des 'steps'
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: npm install -g bats
+      - run: bats -v
