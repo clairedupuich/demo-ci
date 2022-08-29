@@ -2,9 +2,11 @@ name: excercis-github-actions
 
 on: [push]
 jobs:
-  check-hello-wrod:
+  hello-word:
 
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo "hello world" 
+      - uses: actions/checkout@v3
+      - name: Hello Word !
+      - run: echo Hello, world 
