@@ -7,14 +7,14 @@ env:
   
 jobs:
   the_anwser_pull:
-    if: ${{gihtub.event_name == 'pull_request'}}
+    if: ${{github.event_name == 'pull_request'}}
     runs-on: ubuntu-latest
     steps:
       - name: "c'est pull"
         run: echo $PULL
  
   the_anwser_push:
-      if: ${{gihtub.event_name == 'push'}}
+      if: ${{github.event_name == 'push'}}
       runs-on: ubuntu-latest 
       steps:     
         - name: "hello push"
