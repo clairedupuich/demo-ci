@@ -1,0 +1,13 @@
+name: "le workflow next"
+
+on:
+  workflow_run:
+    workflows: [pull_request_fermer] 
+    types: [completed]
+
+jobs:
+  validation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "valider"
+        run: echo "Workflow 'le workflow next' exécuté !"
