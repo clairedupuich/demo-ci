@@ -1,4 +1,4 @@
-name:  push or pull
+name:  push or pull ?
 on: [push, pull_request]
 env: 
    PUSH: c'est un push
@@ -7,15 +7,16 @@ env:
   
 jobs:
   the_anwser_pull:
+    # 条件放在这里，直接查看条件是否符合
     if: ${{github.event_name == 'pull_request'}}
     runs-on: ubuntu-latest
     steps:
-      - name: "c'est pull"
-        run: echo $PULL
+      - name: pull
+        run: echo "$PULL"
  
   the_anwser_push:
       if: ${{github.event_name == 'push'}}
       runs-on: ubuntu-latest 
       steps:     
-        - name: "hello push"
-          run: echo $PUSH   
+        - name: push
+          run: echo "$PUSH"  
