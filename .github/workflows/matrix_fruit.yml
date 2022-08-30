@@ -1,0 +1,16 @@
+name: Matrix_mange_fruit
+on: workflow_dispatch
+
+
+
+
+jobs:
+  build_matrix_fruit:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        fruit: [pomme_petite, pomme_grande, pomme_rouge, pomme_vert]
+        person: [claire, david, jims]
+    steps:
+      - name: eat_apple
+        run: echo "${{matrix.person}} mange ${{matrix.fruit}}, et il adore ca !"
