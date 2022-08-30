@@ -1,0 +1,14 @@
+name: pull_request_fermer
+
+on:
+  pull_request:
+    types:
+      - closed
+jobs:
+  label_pull_request:
+    if: ${{github.event_name == 'merge'}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: PR_merge
+        run: echo 'la pull_request est mergée'
+
