@@ -5,8 +5,8 @@ on:
     types:
       - closed
 jobs:
-  label_pull_request:
-    if: ${{github.event_name == 'merge'}}
+  if_merged:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: PR_merge
